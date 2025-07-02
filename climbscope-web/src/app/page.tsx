@@ -1,102 +1,225 @@
 import Image from "next/image";
+import { FaMountain, FaRoute, FaUserFriends, FaChartLine } from "react-icons/fa";
+import { GiCarabiner } from "react-icons/gi";
+
+type ClimbingLocation = {
+  name: string;
+  region: string;
+  difficulty: string;
+  temperature: string;
+  grade: string;
+  rating: number;
+  reviewCount: number;
+  conditions: string;
+  description: string;
+  image: string;
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const featuredLocation: ClimbingLocation = {
+    name: "Yosemite Valley",
+    region: "California, US",
+    difficulty: "8.5 ML",
+    temperature: "22°C",
+    grade: "IV+",
+    rating: 4.9,
+    reviewCount: 2400,
+    conditions: "Perfect friction conditions",
+    description: "El Capitan, Half Dome, and more legendary formations",
+    image: "/yosemite-valley.jpg"
+  };
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen bg-stone-50 text-stone-900">
+      {/* Hero Section */}
+      <header className="bg-gradient-to-br from-amber-900 to-stone-800 text-stone-50 py-20 px-6 rounded-b-3xl shadow-lg">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-amber-400">Vertical Horizon</span> Climbing
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-stone-200 max-w-2xl mx-auto">
+            Where rugged rock faces meet the thrill of ascent. Discover climbing destinations where every hold tells a story.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all hover:shadow-amber-600/30">
+              Get Started
+            </button>
+            <button className="border-2 border-stone-300 hover:border-stone-100 bg-stone-900/20 px-8 py-3 rounded-full font-semibold transition-all">
+              Explore Routes
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Auth Section */}
+      <section className="max-w-md mx-auto my-12 bg-white p-8 rounded-xl shadow-md">
+        <h2 className="text-2xl font-bold text-center text-stone-800 mb-6">
+          Join the Ascent
+        </h2>
+        <div className="flex flex-col sm:flex-row gap-4 justify-between">
+          <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full font-medium transition-all flex-1">
+            Create Account
+          </button>
+          <button className="border border-stone-300 hover:border-stone-400 px-6 py-2 rounded-full font-medium transition-all flex-1">
+            Sign In
+          </button>
+        </div>
+        <p className="text-center text-stone-500 mt-4 text-sm">
+          Download our app for route tracking
+        </p>
+      </section>
+
+      {/* Featured Location */}
+      <section className="max-w-6xl mx-auto my-16 px-6">
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+          <div className="md:flex">
+            <div className="md:w-1/2 h-64 md:h-auto relative">
+              <Image 
+                src={featuredLocation.image}
+                alt={featuredLocation.name}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8 md:w-1/2">
+              <h3 className="text-2xl font-bold text-sky-800 mb-2">
+                {featuredLocation.name}
+              </h3>
+              <p className="text-stone-600 mb-6">{featuredLocation.region}</p>
+              
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-amber-600">{featuredLocation.difficulty}</p>
+                  <p className="text-sm text-stone-500">Difficulty</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-amber-600">{featuredLocation.temperature}</p>
+                  <p className="text-sm text-stone-500">Temperature</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-amber-600">{featuredLocation.grade}</p>
+                  <p className="text-sm text-stone-500">Grade</p>
+                </div>
+              </div>
+
+              <div className="flex items-center mb-4">
+                <span className="text-amber-600 mr-2">☀️</span>
+                <span className="text-stone-700">{featuredLocation.conditions}</span>
+              </div>
+
+              <div className="flex items-center mb-6">
+                <span className="text-xl font-bold text-amber-600 mr-2">
+                  {featuredLocation.rating}
+                </span>
+                <div className="flex text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>★</span>
+                  ))}
+                </div>
+                <span className="text-stone-500 text-sm ml-2">
+                  ({featuredLocation.reviewCount.toLocaleString()} ratings)
+                </span>
+              </div>
+
+              <p className="text-stone-700">{featuredLocation.description}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="max-w-6xl mx-auto my-20 px-6">
+        <h2 className="text-3xl font-bold text-center mb-12 text-stone-800">
+          Why Climbers Choose Us
+        </h2>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: <FaRoute className="text-3xl text-amber-600" />,
+              title: "Route Database",
+              description: "Comprehensive catalog of climbs worldwide with detailed beta"
+            },
+            {
+              icon: <GiCarabiner className="text-3xl text-amber-600" />,
+              title: "Gear Recommendations",
+              description: "Personalized suggestions based on your climbing style"
+            },
+            {
+              icon: <FaUserFriends className="text-3xl text-amber-600" />,
+              title: "Community Beta",
+              description: "Real-time condition reports from fellow climbers"
+            },
+            {
+              icon: <FaChartLine className="text-3xl text-amber-600" />,
+              title: "Progress Tracking",
+              description: "Visualize your improvement across all climbing disciplines"
+            },
+            {
+              icon: <GiCarabiner className="text-3xl text-amber-600" />,
+              title: "Safety Resources",
+              description: "Learn proper techniques from certified guides"
+            },
+            {
+              icon: <FaMountain className="text-3xl text-amber-600" />,
+              title: "Destination Guides",
+              description: "Plan your next climbing trip with local insights"
+            }
+          ].map((feature, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-amber-50 mb-4">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-stone-800">{feature.title}</h3>
+              <p className="text-stone-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-stone-800 text-stone-200 py-12 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between">
+            <div className="mb-8 md:mb-0">
+              <h2 className="text-2xl font-bold mb-4">
+                <span className="text-amber-400">Vertical</span> Horizon
+              </h2>
+              <p className="max-w-xs">By climbers, for climbers. Established 2023.</p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="font-bold mb-4">Explore</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="hover:text-amber-400 transition">Routes</a></li>
+                  <li><a href="#" className="hover:text-amber-400 transition">Gyms</a></li>
+                  <li><a href="#" className="hover:text-amber-400 transition">Destinations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold mb-4">Community</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="hover:text-amber-400 transition">Forums</a></li>
+                  <li><a href="#" className="hover:text-amber-400 transition">Events</a></li>
+                  <li><a href="#" className="hover:text-amber-400 transition">Partners</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold mb-4">Company</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="hover:text-amber-400 transition">About</a></li>
+                  <li><a href="#" className="hover:text-amber-400 transition">Careers</a></li>
+                  <li><a href="#" className="hover:text-amber-400 transition">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-stone-700 mt-12 pt-8 text-center text-sm">
+            <p>© 2023 Vertical Horizon Climbing. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
