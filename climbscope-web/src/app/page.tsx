@@ -35,7 +35,7 @@ export default function Home() {
       <header className="bg-gradient-to-br from-amber-900 to-stone-800 text-stone-50 py-20 px-6 rounded-b-3xl shadow-lg">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-amber-400">Vertical Horizon</span> Climbing
+            <span className="text-amber-400">climb</span>scope
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-stone-200 max-w-2xl mx-auto">
             Where rugged rock faces meet the thrill of ascent. Discover climbing destinations where every hold tells a story.
@@ -176,51 +176,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-stone-800 text-stone-200 py-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between">
-            <div className="mb-8 md:mb-0">
-              <h2 className="text-2xl font-bold mb-4">
-                <span className="text-amber-400">Vertical</span> Horizon
-              </h2>
-              <p className="max-w-xs">By climbers, for climbers. Established 2023.</p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="font-bold mb-4">Explore</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="hover:text-amber-400 transition">Routes</a></li>
-                  <li><a href="#" className="hover:text-amber-400 transition">Gyms</a></li>
-                  <li><a href="#" className="hover:text-amber-400 transition">Destinations</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-bold mb-4">Community</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="hover:text-amber-400 transition">Forums</a></li>
-                  <li><a href="#" className="hover:text-amber-400 transition">Events</a></li>
-                  <li><a href="#" className="hover:text-amber-400 transition">Partners</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-bold mb-4">Company</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="hover:text-amber-400 transition">About</a></li>
-                  <li><a href="#" className="hover:text-amber-400 transition">Careers</a></li>
-                  <li><a href="#" className="hover:text-amber-400 transition">Contact</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-stone-700 mt-12 pt-8 text-center text-sm">
-            <p>© 2023 Vertical Horizon Climbing. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

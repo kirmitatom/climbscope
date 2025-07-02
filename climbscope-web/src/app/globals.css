@@ -19,6 +19,11 @@
   }
 }
 
+@layer utilities {
+  .btn_dark_green {
+    @apply bg-green-950 px-9 py-4 text-white transition-all hover:bg-black
+  }
+}
 body {
   background: var(--background);
   color: var(--foreground);
