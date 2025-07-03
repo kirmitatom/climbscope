@@ -29,3 +29,70 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+@keyframes scrollright {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scrollleft {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-scrollright {
+  animation: scrollright 0.8s ease-out forwards;
+}
+
+.animate-scrollleft {
+  animation: scrollleft 0.8s ease-out forwards;
+}
+
+@keyframes scrollright {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scrollleft {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-scrollright {
+  animation: scrollright 0.8s ease-out forwards;
+}
+
+.animate-scrollleft {
+  animation: scrollleft 0.8s ease-out forwards;
+}
+
+/* Font definitions */
+.font-header {
+  font-family: var(--header-font);
+}

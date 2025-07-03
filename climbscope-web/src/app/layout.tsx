@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../componenets/Navbar";
 import Footer from "../../componenets/Footer";
+import Navbar1 from "../../componenets/NavBar1";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar></Navbar>
+        <Navbar1></Navbar1>
         <main className="relative overflow-hidden">
           {children}
         </main>

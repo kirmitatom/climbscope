@@ -1,25 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 import { NAV_LINKS } from "../const";
 import Button from "./Button";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between max-container padding-container relative z-30 py-7 px-4 lg:px-8">
+    <nav className="bg-white flex items-center justify-between max-container padding-container relative z-30 py-7 px-4 lg:px-8">
       {/* Logo */}
-      <Link href="#">
-        <span className="font-bold text-white text-lg">climbingscope</span>
+      <Link href="/">
+        <span className="font-bold text-black text-lg">climbingscope</span>
       </Link>
 
-      {/* Navigation Links */}
-      <ul className="flex items-center h-full gap-8 pr-4 lg:gap-12 lg:pr-8">
+      {/* Navigation Links - Hidden on mobile, visible on lg screens */}
+      <ul className="hidden lg:flex items-center h-full gap-8 lg:gap-12 lg:pr-8">
         {NAV_LINKS.map((link) => (
-          <Link
-            href={link.href}
-            key={link.key}
-            className="regular-16 text-white cursor-pointer pb-1.5 transition-all hover:font-bold"
-          >
-            {link.label}
-          </Link>
+          <li key={link.key}>
+            <Link
+              href={link.href}
+              className="regular-16 text-black cursor-pointer pb-1.5 transition-all hover:font-bold"
+            >
+              {link.label}
+            </Link>
+          </li>
         ))}
       </ul>
 
@@ -29,11 +31,17 @@ const Navbar = () => {
           type="button" 
           title="Login" 
           variant="btn_dark_green" 
-          // icon="/user.svg" (optional: add if you have an icon)
         />
       </div>
 
-      
+      {/* Mobile menu button - Visible only on mobile */}
+      <Image 
+        src="/menu.svg"
+        alt="menu" 
+        height={32} 
+        width={32} 
+        className="inline-block cursor-pointer lg:hidden"
+      />
     </nav>
   );
 };
