@@ -14,11 +14,11 @@ const Routes = () => {
           Explore a curated selection of routes. Connect with
           fellow climbers and find exactly where you want your next adventure.
         </p>
-        <Button 
-          type="button"
-          title="visit interactive map"
-          variant="btn_dark_green"
-        />
+        <Link href="/login">
+          <button className="px-6 py-3 font-bold text-white bg-dark rounded-lg transition-colors duration-300 hover:bg-white hover:text-black">
+            visit interactive map
+          </button>
+        </Link>
       </div>
 
       {/* Mobile Content - Hidden on desktop */}
