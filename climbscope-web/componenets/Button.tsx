@@ -10,7 +10,7 @@ type ButtonProps = {
 }
 const Button = ({ type, title, icon, variant }: ButtonProps) => {
   return (
-    <button type={type} className={`flexCenter gap-2 rounded-full border ${variant}`}>
+    <button type={type} className={`flexCenter gap-6 rounded-full border ${variant}`}>
       {icon && (
         <Image 
           src={icon} 

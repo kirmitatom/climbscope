@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-dark: #1e293b;
+  --primary-color: #3b82f6;
 }
 
 @theme inline {
@@ -14,16 +16,25 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: black;
     --foreground: #ededed;
   }
 }
 
 @layer utilities {
-  .btn_dark_green {
-    @apply bg-green-950 px-9 py-4 text-white transition-all hover:bg-black
+  @apply.btn_dark_green {
+    color: #ffffff;
+    background-color: var(--primary-color);
+    padding: 15px 30px;
+    border-radius: 9999px;
+    border: 1px solid;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
   }
 }
+
 body {
   background: var(--background);
   color: var(--foreground);
