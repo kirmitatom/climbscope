@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Marketplace = () => {
+const Routes = () => {
   return (
     <section id="Marketplace" className="flex flex-wrap items-center justify-between py-16 px-[10%]">
       {/* Desktop Content */}
@@ -37,7 +37,7 @@ const Marketplace = () => {
         </Link>
       </div>
 
-      {/* Marketplace Images */}
+      {/* Images */}
       <div className="grid grid-cols-2 gap-5 w-full lg:max-w-[45%] animate-scrollleft">
         <div className="relative aspect-square">
           <Image
@@ -76,4 +76,4 @@ const Marketplace = () => {
   );
 };
 
-export default Marketplace;
+export default Routes;
