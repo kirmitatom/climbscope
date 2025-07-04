@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button";
 
 const Routes = () => {
   return (
-    <section id="Marketplace" className="flex flex-wrap items-center justify-between py-16 px-[10%]">
+    <section className="flex flex-wrap items-center justify-between py-16 px-[10%]">
       {/* Desktop Content */}
       <div className="max-w-[45%] animate-scrollright hidden lg:block">
         <h2 className="text-6xl font-bold text-dark font-header">
@@ -14,7 +13,7 @@ const Routes = () => {
           Explore a curated selection of routes. Connect with
           fellow climbers and find exactly where you want your next adventure.
         </p>
-        <Link href="/login">
+        <Link href="#">
           <button className="px-6 py-3 font-bold text-white bg-dark rounded-lg transition-colors duration-300 hover:bg-white hover:text-black">
             visit interactive map
           </button>
@@ -30,8 +29,8 @@ const Routes = () => {
           Explore a curated selection of climbing routes and indoor gyms.
         </p>
         <Link
-          href="/Marketplace"
-          className="px-6 py-3 bg-dark text-white no-underline rounded-full text-sm mb-8"
+          href="#"
+          className="mb-9 px-6 py-3 font-bold text-white bg-dark rounded-lg transition-colors duration-300 hover:bg-white hover:text-black"
         >
           Visit interactive map
         </Link>

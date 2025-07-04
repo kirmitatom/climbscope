@@ -5,14 +5,10 @@
   --foreground: #171717;
   --text-dark: #1e293b;
   --primary-color: #3b82f6;
+  --font-sans: sans-serif;
+  --font-mono: monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -21,19 +17,6 @@
   }
 }
 
-@layer utilities {
-  @apply.btn_dark_green {
-    color: #ffffff;
-    background-color: var(--primary-color);
-    padding: 15px 30px;
-    border-radius: 9999px;
-    border: 1px solid;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-}
 
 body {
   background: var(--background);
