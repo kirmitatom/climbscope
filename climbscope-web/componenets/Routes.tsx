@@ -29,7 +29,7 @@ const Routes = () => {
           Explore a curated selection of climbing routes and indoor gyms.
         </p>
         <Link
-          href="#"
+          href="/map"
           className="mb-9 px-6 py-3 font-bold text-white bg-dark rounded-lg transition-colors duration-300 hover:bg-white hover:text-black"
         >
           Visit interactive map
