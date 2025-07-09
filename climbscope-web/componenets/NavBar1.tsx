@@ -35,7 +35,7 @@ const Navbar = () => {
       {/* Navigation Links - Changed positioning and z-index */}
       <div className={`bg-black fixed top-16 left-0 w-full bg-primary transition-all duration-500 overflow-hidden ${isMenuOpen ? 'max-h-screen' : 'max-h-0'} md:max-h-none md:static md:bg-transparent`}>
         <ul className="flex flex-col items-center justify-center gap-6 p-4 md:flex-row md:p-0">
-          {['Home', 'Community', 'Events', 'Routes', 'Marketplace'].map((item) => (
+          {['Home', 'Map', 'Ranks', 'climbing buddy', 'MyProfile'].map((item) => (
             <li key={item}>
               <Link 
                 href={`#${item}`} 
