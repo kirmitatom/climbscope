@@ -1,9 +1,19 @@
 import React from 'react'
 
 const SignUpPage: React.FC = () => {
+  function signup(event: React.FormEvent<HTMLFormElement>): void {
+    event.preventDefault()
+
+    const formData = new FormData(event.currentTarget)
+    const email = formData.get('email')
+    const password = formData.get('password')
+    const remember = formData.get('remember')
+
+    //backend logic
+  }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-      <form className="max-w-sm w-full bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <form onSubmit={signup} className="max-w-sm w-full bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
         <div className="mb-5">
           <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             Username
