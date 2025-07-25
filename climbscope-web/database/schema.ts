@@ -1,4 +1,4 @@
-import { pgTable, serial, uuid, text, varchar, integer, timestamp, decimal } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, varchar, integer, timestamp, decimal } from 'drizzle-orm/pg-core';
 
 // Users Table
 export const usersTable = pgTable('users', {
@@ -71,7 +71,7 @@ export const recommendationsTable = pgTable('recommendations', {
   userId: uuid('user_id')
     .notNull()
     .references(() => usersTable.id, { onDelete: 'cascade' }),
-  type: varchar('type', { length: 50 }).notNull(), // route or event
+  type: varchar('type', { length: 50 }).notNull(),
   targetId: uuid('target_id').notNull(),
   score: decimal('score', { precision: 5, scale: 2 }),
   createdAt: timestamp('created_at').notNull().defaultNow(),

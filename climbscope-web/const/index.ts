@@ -4,3 +4,8 @@ export const NAV_LINKS = [
     { href: "#", key: "leaderboard", label: "leaderboard"},
     { href: "#", key: "scanner", label: "scanner"},
 ]
+
+interface ClimbScopeUser {
+  email: string;
+  password: string;
+}
