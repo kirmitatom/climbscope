@@ -1,20 +1,23 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
+import { signInCredentials } from '../../../../lib/actions/signin'
 
 const SignInPage: React.FC = () => {
-  function signin(event: React.FormEvent<HTMLFormElement>): void {
-    event.preventDefault()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-    const formData = new FormData(event.currentTarget)
-    const email = formData.get('email')
-    const password = formData.get('password')
-    const remember = formData.get('remember')
-
-    //backend logic
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await signInCredentials({ email, password })
   }
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-      <form onSubmit={signin} className="max-w-sm w-full bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-sm w-full bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+      >
         <div className="mb-5">
           <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             Your email
@@ -22,6 +25,8 @@ const SignInPage: React.FC = () => {
           <input
             type="email"
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
               focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 
               dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
@@ -37,6 +42,8 @@ const SignInPage: React.FC = () => {
           <input
             type="password"
             id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
               focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 
               dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
@@ -52,7 +59,6 @@ const SignInPage: React.FC = () => {
               className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 
                 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 
                 dark:focus:ring-offset-gray-800"
-              required
             />
           </div>
           <label htmlFor="remember" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
